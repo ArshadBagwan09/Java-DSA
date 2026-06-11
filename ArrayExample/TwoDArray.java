@@ -15,9 +15,13 @@ public class TwoDArray {
         number[i][j] = sc.nextInt();
       }
     }
+    int x = sc.nextInt();
     for (int i = 0; i < row; i++) {
       for (int j = 0; j < cols; j++) {
-        System.out.print(number[i][j] + " ");
+        if (number[i][j] == x) {
+          System.out.print("X is Location is (" + i + "," + j + ")");
+        }
+
       }
       System.out.println(" ");
     }
