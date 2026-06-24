@@ -1,8 +1,15 @@
 package DSA;
 
+import java.util.*;
+
 class LinkedListExample {
 
   Node head;
+  private int size;
+
+  LinkedListExample() {
+    this.size = 0;
+  }
 
   class Node {
     String data;
@@ -11,6 +18,7 @@ class LinkedListExample {
     Node(String data) {
       this.data = data;
       this.next = null;
+      size++;
     }
   }
 
@@ -70,6 +78,7 @@ class LinkedListExample {
       System.out.println("List is Empty");
       return;
     }
+    size--;
     head = head.next;
   }
 
@@ -79,6 +88,7 @@ class LinkedListExample {
       System.out.println("List is Empty");
       return;
     }
+    size--;
     if (head.next == null) {
       head = null;
       return;
@@ -89,6 +99,10 @@ class LinkedListExample {
       lastNode = lastNode.next;
       secondNode = secondNode.next;
     }
+  }
+
+  public int getsize() {
+    return size;
   }
 
   public static void main(String[] args) {
@@ -106,5 +120,23 @@ class LinkedListExample {
 
     ll.deletelast();
     ll.print();
+
+    ll.deletefirst();
+    ll.print();
+
+    ll.addLast("Arshad");
+    ll.addFirst("Bagwan");
+    ll.print();
+
+    ll.deletelast();
+    ll.print();
+
+    System.out.println(ll.getsize());
+
+    ll.addFirst("Kolhapur");
+    ll.print();
+
+    ll.getsize();
+
   }
 }
